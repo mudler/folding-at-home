@@ -25,7 +25,7 @@ RUN apt-get update \
     && chmod +x /tini  
 
 FROM nvidia/opencl:runtime-ubuntu18.04
-
+#FROM nvidia/cuda:10.2-runtime-ubuntu16.04
 ARG BUILD_DATE
 ARG VCS_REF
 ARG VERSION
@@ -61,6 +61,8 @@ RUN mkdir -p /usr/share/doc/fahclient/ \
     && rm -rf /var/lib/apt/ /var/lib/dpkg/ /var/lib/cache/ /var/lib/log/ \
     && groupadd -r fah \
     && useradd -r -g fah fah \
+    && groupmod -g 481 video \
+    && usermod -a -G video fah \
     && chown -R fah /app
 
 EXPOSE 36330 7396
