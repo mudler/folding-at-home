@@ -86,6 +86,17 @@ docker run \
  --entrypoint="nvidia-smi" \
  stefancrain/folding-at-home:latest
 ```
+### OpenSUSE Tumbleweed
+
+Install nvidia-container-toolkit from https://build.opensuse.org/package/show/home:EDiGiacinto:branches:home:jordimassaguerpla:nvidia_container/libnvidia-container
+
+```sh
+
+zypper ar https://download.opensuse.org/repositories/home:/EDiGiacinto:/branches:/home:/jordimassaguerpla:/nvidia_container/openSUSE_Tumbleweed/home:EDiGiacinto:branches:home:jordimassaguerpla:nvidia_container.repo
+
+```
+
+build the docker image, and run it as usual
 
 ### FAHClient
 
