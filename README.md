@@ -97,6 +97,17 @@ zypper ar https://download.opensuse.org/repositories/home:/jordimassaguerpla:/nv
 
 build the docker image, and run it as usual
 
+### Optirun
+
+A note on Optirun, it can be used, but you need to run dockerd with optirun. An (hackish) way to do so is editing or overriding your systemd service command, overriding `ExecStart` and `KillMode`:
+
+```
+ExecStart=/usr/bin/optirun /usr/bin/dockerd --add-runtime oci="/usr/bin/optirun /usr/sbin/docker-runc" $DOCKER_NETWORK_OPTIONS $DOCKER_OPTS
+
+KillMode=control-group
+```
+
+
 ### FAHClient
 
 > What are the FAHClient defaults set for this container?
