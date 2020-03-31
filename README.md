@@ -91,9 +91,8 @@ docker run \
 Install nvidia-container-toolkit from https://build.opensuse.org/package/show/home:EDiGiacinto:branches:home:jordimassaguerpla:nvidia_container/libnvidia-container
 
 ```sh
-
 zypper ar https://download.opensuse.org/repositories/home:/EDiGiacinto:/branches:/home:/jordimassaguerpla:/nvidia_container/openSUSE_Tumbleweed/home:EDiGiacinto:branches:home:jordimassaguerpla:nvidia_container.repo
-
+zypper ar https://build.opensuse.org/package/show/home:jordimassaguerpla:nvidia_container/nvidia-container-runtime-toolkit
 ```
 
 build the docker image, and run it as usual
